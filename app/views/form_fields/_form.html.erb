@@ -1,0 +1,45 @@
+<%= form_for @form_field , :remote => true do |f| %>
+  <% if @form_field.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@form_field.errors.count, "error") %> prohibited this form_field from being saved:</h2>
+
+      <ul>
+      <% @form_field.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :form_id %><br />
+    <%= f.number_field :form_id %>
+  </div>
+  <div class="field">
+    <%= f.label :field_id %><br />
+    <%= f.number_field :field_id %>
+  </div>
+  <div class="field">
+    <%= f.label :axis_x %><br />
+    <%= f.number_field :axis_x %>
+  </div>
+  <div class="field">
+    <%= f.label :axis_y %><br />
+    <%= f.number_field :axis_y %>
+  </div>
+  <div class="field">
+    <%= f.label :width %><br />
+    <%= f.number_field :width %>
+  </div>
+  <div class="field">
+    <%= f.label :height %><br />
+    <%= f.number_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :page %><br />
+    <%= f.number_field :page %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

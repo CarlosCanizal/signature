@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Form:</b>
+  <%= @form_field.form_id %>
+</p>
+
+<p>
+  <b>Field:</b>
+  <%= @form_field.field_id %>
+</p>
+
+<p>
+  <b>Axis x:</b>
+  <%= @form_field.axis_x %>
+</p>
+
+<p>
+  <b>Axis y:</b>
+  <%= @form_field.axis_y %>
+</p>
+
+<p>
+  <b>Width:</b>
+  <%= @form_field.width %>
+</p>
+
+<p>
+  <b>Height:</b>
+  <%= @form_field.height %>
+</p>
+
+<p>
+  <b>Page:</b>
+  <%= @form_field.page %>
+</p>
+
+
+<%= link_to 'Edit', edit_form_field_path(@form_field) %> |
+<%= link_to 'Back', form_fields_path %>

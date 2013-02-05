@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  form_id: 1
+  field_id: 1
+  axis_x: 1
+  axis_y: 1
+  width: 1
+  height: 1
+  page: 1
+
+two:
+  form_id: 1
+  field_id: 1
+  axis_x: 1
+  axis_y: 1
+  width: 1
+  height: 1
+  page: 1
