@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Form:</b>
+  <%= @credit.form_id %>
+</p>
+
+<p>
+  <b>Applicant:</b>
+  <%= @credit.applicant_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_credit_path(@credit) %> |
+<%= link_to 'Back', credits_path %>

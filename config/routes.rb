@@ -1,4 +1,10 @@
 SignApp::Application.routes.draw do
+  resources :applicant_fields
+
+  resources :credits
+
+  resources :applicants
+
   resources :form_fields
 
   resources :options
@@ -10,6 +16,8 @@ SignApp::Application.routes.draw do
   resources :forms
 
   resources :banks
+
+  match 'forms/:form_id/users/:user_id' => "forms#setup"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -60,11 +68,13 @@ SignApp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  #root :to => 'forms#setup'
 
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+
+
 end

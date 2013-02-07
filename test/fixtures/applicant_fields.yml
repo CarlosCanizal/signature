@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  applicant_id: 1
+  field_id: 1
+  value: MyString
+
+two:
+  applicant_id: 1
+  field_id: 1
+  value: MyString

@@ -81,3 +81,6 @@ class FormsController < ApplicationController
     end
   end
 end
+
+def setup
+end

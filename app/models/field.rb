@@ -5,4 +5,7 @@ class Field < ActiveRecord::Base
 
   has_many :form_fields
   has_many :forms, through: :form_fields
+
+  has_many :applicant_fields
+  has_many :applicants, through: :applicant_fields
 end

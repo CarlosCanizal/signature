@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Applicant:</b>
+  <%= @applicant_field.applicant_id %>
+</p>
+
+<p>
+  <b>Field:</b>
+  <%= @applicant_field.field_id %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @applicant_field.value %>
+</p>
+
+
+<%= link_to 'Edit', edit_applicant_field_path(@applicant_field) %> |
+<%= link_to 'Back', applicant_fields_path %>

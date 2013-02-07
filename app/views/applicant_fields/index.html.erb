@@ -1,0 +1,27 @@
+<h1>Listing applicant_fields</h1>
+
+<table>
+  <tr>
+    <th>Applicant</th>
+    <th>Field</th>
+    <th>Value</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @applicant_fields.each do |applicant_field| %>
+  <tr>
+    <td><%= applicant_field.applicant_id %></td>
+    <td><%= applicant_field.field_id %></td>
+    <td><%= applicant_field.value %></td>
+    <td><%= link_to 'Show', applicant_field %></td>
+    <td><%= link_to 'Edit', edit_applicant_field_path(applicant_field) %></td>
+    <td><%= link_to 'Destroy', applicant_field, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Applicant field', new_applicant_field_path %>
