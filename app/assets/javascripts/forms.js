@@ -18,7 +18,8 @@ $(document).ready(function(){
 	
 	$('#save').click(function(event){
 		event.preventDefault();
-		var elements = []
+		var elements = {"fields":[]}
+		var counter = 0;
 		$('.dropped').each(function(index){
 			var object = $(this);
 			var position = object.offset()
@@ -26,10 +27,23 @@ $(document).ready(function(){
 			var left = position.left;
 			var width = object.width();
 			var height = object.height();
-			//alert('top:'+top+" / left:"+left + "/ width:" +width+"/ height:"+height);
-			var element = {'top':top,'left':left,'width':width,'height':height};
-			elements.push(element);
+			var field_id = object.attr('field_id');
+			var element = {'field_id':field_id,'axis_y':top,'axis_x':left,'width':width,'height':height};
+			elements.fields.push(element);
 		});
+		$.ajax({
+            type: 'POST',
+            dataType : 'json',
+            url: "/position",
+            data: elements,
+            error: function(request,error){ alert(request.responseText)  },
+            success: function(data){
+            	alert('success');
+            },
+            complete: function(){
+            	//$('#payment_button').fadeIn();
+            }
+            });
 	});
 
     var url = '/assets/banorte.pdf';

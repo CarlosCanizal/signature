@@ -1,4 +1,36 @@
 class FormFieldsController < ApplicationController
+
+  require 'json'
+
+  def position
+    fields = params[:fields]
+    #fields = fields.to_json
+    #fields = JSON.parse(fields.to_json)
+
+    fields.each_with_index do |field,index|
+      field = fields[index.to_s]
+      form_id = 1
+      field_id = fields[index.to_s]["field_id"]
+      ####
+      field["page"] = 1;
+
+      if FormField.where(:form_id => form_id, :field_id => field_id).present?
+        @form_field = FormField.where(:form_id => form_id, :field_id => field_id).last()
+        @form_field.update_attributes(field)
+      else
+        #####
+        field["form_id"] = 1;
+        @form_field = FormField.create(field)
+      end
+      @form_field.save
+    end
+
+    respond_to do |format|
+      format.html
+      format.json { render json: fields[0]   }
+    end
+  end
+
   # GET /form_fields
   # GET /form_fields.json
   def index

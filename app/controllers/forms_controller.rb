@@ -84,3 +84,9 @@ end
 
 def setup
 end
+
+def download
+  form_id = params[:form_id]
+  applicant_id = params[:applicant_id]
+
+end

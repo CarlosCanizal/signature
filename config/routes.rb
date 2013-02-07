@@ -17,7 +17,9 @@ SignApp::Application.routes.draw do
 
   resources :banks
 
-  match 'forms/:form_id/users/:user_id' => "forms#setup"
+  match 'forms/:form_id/applicant/:applicant_id' => "forms#setup"
+  match 'forms/:form_id/applicant/:applicant_id' => "forms#download"
+  post  'position' => "form_fields#position", :as => 'position'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -75,6 +77,4 @@ SignApp::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
-
-
 end
