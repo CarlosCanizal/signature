@@ -6,6 +6,11 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'prawn_rails'
+
+gem 'bootstrap-sass'
+gem 'font-awesome-sass-rails'
+gem 'simple_form'
 
 
 # Gems used only for assets and not required

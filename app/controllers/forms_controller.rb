@@ -80,13 +80,24 @@ class FormsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def setup
+
+  end
+
+  def download
+    form_id = params[:form_id]
+    applicant_id = params[:applicant_id]
+    @fields = []
+    fields = Form.find(form_id).fields.all
+    fields.each do |field|
+      value = ApplicantField.where(:applicant_id=> applicant_id ,:field_id=> field.id ).last()
+      position = FormField.where(:form_id =>form_id, :field_id =>field.id).last()
+
+      @fields.push({:field=>position,:value=>value.value})
+    end
+
+  end
 end
 
-def setup
-end
 
-def download
-  form_id = params[:form_id]
-  applicant_id = params[:applicant_id]
-
-end
